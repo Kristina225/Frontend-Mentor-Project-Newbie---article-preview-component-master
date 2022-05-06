@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 62.5%;
+    --color-very-dark-grayish-blue: #48556a;
+    --color-desaturated-dark-blue: #6E8098;
+    --color-grayish-blue: #9DAEC2;
+    --color-light-grayish-blue: #ecf2f8;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-light-grayish-blue);
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 1rem;
+    display: flex;
+    max-width: 72rem;
+    box-shadow: 0px 40px 40px -10px rgba(201, 213, 225, 0.503415);
+    position: relative;
+}
+
+.card__image {
+    max-width: 28.5rem;
+}
+
+.card__image img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+
+.card__info img {
+    max-width: 4rem;
+    border-radius: 50%;
+}
+
+/* ---------------------- Desktop: Card Content Styles --------------------- */
+.card__content {
+    flex: 1;
+    padding: 3.5rem 4rem;
+}
+
+.card__title {
+    font-size: 2rem;
+    line-height: 2.8rem;
+    font-weight: 700;
+    max-width: 36.5rem;
+    letter-spacing: 0.025rem;
+    color: var(--color-very-dark-grayish-blue);
+}
+
+.card__text {
+    margin-top: 1.2rem;
+    font-size: 1.3rem;
+    max-width: 36.5;
+    font-weight: 500;
+    line-height: 2rem;
+    letter-spacing: 0.012rem;
+    color: var(--color-desaturated-dark-blue);
+}
+
+.card__info--container {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.card__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+/* Check letter spacing on other text */
+.card__info__stats--author {
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 2rem;
+    letter-spacing: 0.012rem;
+    color: var(--color-very-dark-grayish-blue);
+}
+
+.card__info__stats--date {
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    letter-spacing: 0.012rem;
+    color: var(--color-grayish-blue);
+}
+
+.card__info__share--icon {
+    background-color: var(--color-light-grayish-blue);
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card__info__share--popup {
+    position: absolute;
+    background-color: var(--color-very-dark-grayish-blue);
+    max-width: 24.8rem;
+    max-height: 5.5rem;
+    padding: 1.8rem 3.6rem;
+    border-radius: 1rem;
+    bottom: 9.6rem;
+    right: -6.8rem;
+    display: flex;
+    align-items: center;
+    gap: 2.1rem;
+    display: none;
+}
+
+.card__info__share--popup.active {
+    display: flex;
+}
+
+.card__info__share--popup::after {
+    content: "";
+    width: 2.4rem;
+    height: 2.4rem;
+    background-color: var(--color-very-dark-grayish-blue);
+    position: absolute;
+    bottom: -1.1rem;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+}
+
+.card__info__share--popup--text {
+    text-transform: uppercase;
+    color: var(--color-grayish-blue);
+    letter-spacing: 0.5rem;
+    font-size: 1.3rem;
+    line-height: 2rem;
+}
+
+.card__info__share--popup--icons {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+
+}
+
+.card__info__share--popup--icons img {
+    max-width: 2rem;
+    max-height: 2rem;
+}
+
+
+
+
+/* --------------------------------- MOBILE VIEW ------------------------------------ */
+
+@media only screen and (max-width: 75rem) {
+    body {
+        padding: 2.4rem;
+    }
+    
+    .card {
+        flex-direction: column;
+        max-width: 32.7rem;
+    }
+    
+    .card__image {
+        max-width: 100%;
+        max-height: 20rem;
+    }
+    
+    .card__image img {
+        width: 100%;
+        height: 100%;
+        border-radius: 1rem 1rem 0 0;
+    }
+    
+    
+    /* ---------------------- Mobile: Card Content Styles --------------------- */
+    .card__content {
+        flex: 1;
+        padding: 3.6rem 3.2rem 2rem 3.2rem;
+    }
+    
+    .card__title {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        max-width: 26.3rem;
+        letter-spacing: 0.02rem;
+    }
+    
+    .card__text {
+        max-width: 26.3rem;
+    }
+    
+    .card__info--container {
+        margin-top: 3.2rem;
+    }
+
+    .card__info__share {
+        display: flex;
+    }
+    
+    .card__info__share--popup {
+        position: absolute;
+        max-width: 100%;
+        max-height: 6.4rem;
+        padding: 2.2rem 3.2rem;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        gap: 2.1rem;
+        border-radius: 0 0 1rem 1rem;
+    }
+    
+    .card__info__share--popup.active {
+        display: flex;
+    }
+    
+    .card__info__share--popup::after {
+        display: none;
+    }
+
+
+    .card__info__share--icon {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 10;
+        transform: translate(-100%, -50%);
+    }
+}
+
+
